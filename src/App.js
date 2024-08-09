@@ -5,10 +5,11 @@ import Alert from './Components/Alert';
 import React, { useState } from 'react';
 import About from './Components/About';
 import {
-  BrowserRouter as Router,
+  // BrowserRouter as Router,
   Routes,
   Route
 } from "react-router-dom";
+import { HashRouter } from 'react-router-dom';
 
 function App() {
   const [mode, setMode] = useState('light'); 
@@ -37,7 +38,7 @@ function App() {
   };
 
   return (
-    <Router basename="/my-app">
+    <HashRouter>
       <Navbar title="Text Utils" about="About us" mode={mode} toggleMode={toggleMode} />
 
       <Alert message={alert} />
@@ -48,7 +49,7 @@ function App() {
           <Route exact path="/" element={<TextForm showalert={showalert} heading="Enter your text here" mode={mode} />} />
         </Routes>
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 
