@@ -4,6 +4,8 @@ import TextForm from './Components/TextForm';
 import Alert from './Components/Alert';
 import React, { useState } from 'react';
 import About from './Components/About';
+import Footer from './Components/Footer';
+
 import {
   // BrowserRouter as Router,
   Routes,
@@ -39,7 +41,7 @@ function App() {
 
   return (
     <HashRouter>
-      <Navbar title="Text Utils" about="About us" mode={mode} toggleMode={toggleMode} />
+      <Navbar title="Text Utils" about="About" mode={mode} toggleMode={toggleMode} />
 
       <Alert message={alert} />
 
@@ -49,6 +51,7 @@ function App() {
           <Route exact path="/" element={<TextForm showalert={showalert} heading="Enter your text here" mode={mode} />} />
         </Routes>
       </div>
+      <Footer mode={mode}/> 
     </HashRouter>
   );
 }
