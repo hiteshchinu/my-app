@@ -50,7 +50,7 @@ export default function TextForm(props) {
   const handlePasteClick = async () => {
     try {
       const clipboardText = await navigator.clipboard.readText();
-      setText(clipboardText);
+      setText(prevText => prevText + clipboardText);
       props.showalert("Pasted from Clipboard!", "success");
     } catch (err) {
       props.showalert("Failed to paste text.", "danger");
