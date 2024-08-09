@@ -6,13 +6,9 @@ const About = () => {
     <div className="container my-3">
       <h1>About</h1>
       <p>
-        This application provides various text manipulation features including converting text to uppercase, lowercase, and more. 
-        You can also clear text, copy it to the clipboard, and even convert it to speech. 
-        The app supports both light and dark modes for a personalized user experience.
+      Welcome to Text Utils! This simple tool allows you to easily manipulate and manage your text. Features include converting text to uppercase or lowercase, removing extra spaces, reversing text, and converting text to speech. With both light and dark mode options, it’s designed for a smooth and user-friendly experience.
       </p>
-      <p>
-        The project is designed to help users manage and transform text data efficiently, with a focus on usability and accessibility.
-      </p>
+      
     </div>
     </>
   );

@@ -47,6 +47,16 @@ export default function TextForm(props) {
     props.showalert("Text reversed", "success");
   };
 
+  const handlePasteClick = async () => {
+    try {
+      const clipboardText = await navigator.clipboard.readText();
+      setText(clipboardText);
+      props.showalert("Pasted from Clipboard!", "success");
+    } catch (err) {
+      props.showalert("Failed to paste text.", "danger");
+    }
+  };
+
   const speak = () => {
     if (text.trim() === '') {
       return;
@@ -75,6 +85,7 @@ export default function TextForm(props) {
             }}
           ></textarea>
         </div>
+        <button className="btn btn-primary mx-1 my-1" onClick={handlePasteClick}>Paste Text</button>
         <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
         <button className="btn btn-primary mx-1 my-1" onClick={handleLoClick}>Convert to Lowercase</button>
         <button className="btn btn-primary mx-1 my-1" onClick={handleCapitalizeClick}>Capitalize Each Word</button>
