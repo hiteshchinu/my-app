@@ -37,7 +37,7 @@ function App() {
   };
 
   return (
-    <Router basename="/react-app">
+    <Router basename="/my-app">
       <Navbar title="Text Utils" about="About us" mode={mode} toggleMode={toggleMode} />
 
       <Alert message={alert} />
